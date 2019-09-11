@@ -18,13 +18,11 @@ contract FLUICard is ERC721Full, ERC721Mintable {
 
 	function mintCard(string memory name, uint256 balance, address account) public {
 		require(owner == msg.sender);
-
 		uint256 cardId = cards.length;
-
 		cards.push(Card(name, balance));
-
 		_mint(account, cardId);
 	}
+
 
 	function getCardCount() public view returns (uint256 count) {
 		return cards.length;
